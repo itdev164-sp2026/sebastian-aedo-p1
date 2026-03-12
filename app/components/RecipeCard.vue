@@ -10,8 +10,12 @@
         :src="'https:' + recipe.fields.image.fields.file.url"
         :alt="recipe.fields.title"
         class="w-full h-full object-cover"
+      >
+      <UIcon
+        v-else
+        name="i-lucide-image-off"
+        class="size-10 text-gray-400"
       />
-      <UIcon v-else name="i-lucide-image-off" class="size-10 text-gray-400" />
     </div>
 
     <div class="p-4 flex flex-col gap-3">
@@ -20,7 +24,10 @@
           {{ recipe.fields.title }}
         </h2>
 
-        <p v-if="recipe.fields.cookingTime" class="text-xs text-gray-500 mt-1">
+        <p
+          v-if="recipe.fields.cookingTime"
+          class="text-xs text-gray-500 mt-1"
+        >
           Cook Time: {{ recipe.fields.cookingTime }}
         </p>
       </div>
@@ -43,7 +50,7 @@
 defineProps({
   recipe: {
     type: Object,
-    required: true,
-  },
-});
+    required: true
+  }
+})
 </script>
