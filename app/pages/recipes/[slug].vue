@@ -9,7 +9,7 @@
       />
       <h1>{{ recipe.fields.title }}</h1>
       <p>{{ recipe.fields.description }}</p>
-      <p><strong>Cook Time:</strong> {{ recipe.fields.cookTime }} minutes</p>
+      <p><strong>Cook Time:</strong> {{ recipe.fields.cookingTime }}</p>
 
       <h2>Ingredients</h2>
       <p class="whitespace">{{ recipe.fields.ingredients }}</p>
