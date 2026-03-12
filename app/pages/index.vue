@@ -17,10 +17,6 @@
           </p>
 
           <div class="flex flex-wrap gap-4">
-            <UButton to="/recipes" size="lg" icon="i-lucide-book-open">
-              Browse Recipes
-            </UButton>
-
             <UButton
               to="/recipes"
               size="lg"
