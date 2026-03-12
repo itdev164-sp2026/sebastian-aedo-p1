@@ -1,60 +1,53 @@
-# Nuxt Starter Template
+Project Description
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+AEDO'S KITCHEN is a simple recipe blog that allows users to browse recipes and view detailed cooking instructions. The application connects to Contentful, which stores the recipe content. The website retrieves the data and displays it dynamically.
 
-Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
+Users can explore different recipes, view ingredients, cooking instructions, and images for each dish.
 
-- [Live demo](https://starter-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
+The application includes the following features:
 
-<a href="https://starter-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png" width="830" height="466">
-  </picture>
-</a>
+  -View a homepage introducing the recipe blog
+  -Browse a list of all available recipes
+  -Click on a recipe to view detailed information
+  -Display recipe title, image, description, ingredients, and instructions
+  -Use Contentful as a CMS to manage recipe content
+  -Dynamic routing for individual recipes using slugs
 
-> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
+Tasks and user stories: 
 
-## Quick Start
+Feature: Browse Recipes
+  
+  -User Story: As a user, I want to see a list of recipes so that I can choose one to cook.
+  -Tasks:
+          Create a page to display all recipes
+          Fetch recipe data from Contentful
+          Display each recipe as a card
 
-```bash [Terminal]
-npm create nuxt@latest -- -t ui
-```
+Feature: View Recipe Details
 
-## Deploy your own
+  -User Story: As a user, I want to view the details of a recipe so that I can see the ingredients and instructions.
+  -Tasks:
+          Create a dynamic route for recipes using a slug
+          Fetch a single recipe from Contentful
+          Display recipe title, description, ingredients, and instructions
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=starter&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fstarter&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fstarter-dark.png&demo-url=https%3A%2F%2Fstarter-template.nuxt.dev%2F&demo-title=Nuxt%20Starter%20Template&demo-description=A%20minimal%20template%20to%20get%20started%20with%20Nuxt%20UI.)
+Feature: Homepage
 
-## Setup
+  -User Story: As a user, I want a homepage that explains the purpose of the website.
+  -Tasks:
+          Create a homepage layout
+          Add introduction text
+          Add navigation to the recipes page 
 
-Make sure to install the dependencies:
+Run the app locally: 
 
-```bash
-pnpm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-pnpm dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-pnpm build
-```
-
-Locally preview production build:
-
-```bash
-pnpm preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+1) Clone repository: 
+                git clone https://github.com/YOUR_USERNAME/sebastian-aedo-p1.git
+                cd sebastian-aedo-p1
+2) Install dependencies: 
+                pnpm install
+3) Create environment variables: 
+                CONTENTFUL_SPACE_ID=your_space_id
+                CONTENTFUL_ACCESS_TOKEN=your_access_token
+4) Start server:
+                 pnpm dev
