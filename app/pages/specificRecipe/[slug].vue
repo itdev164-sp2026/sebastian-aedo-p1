@@ -17,7 +17,7 @@
           {{ recipe.fields.description }}
         </p>
 
-        <p v-if="recipe.fields.cookTime" class="mb-6 text-sm text-gray-500">
+        <p v-if="recipe.fields.cookingTime" class="mb-6 text-sm text-gray-500">
           <strong>Cook Time:</strong> {{ recipe.fields.cookingTime }}
         </p>
 

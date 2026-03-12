@@ -20,8 +20,8 @@
           {{ recipe.fields.title }}
         </h2>
 
-        <p v-if="recipe.fields.cookTime" class="text-xs text-gray-500 mt-1">
-          Cook Time: {{ recipe.fields.cookTime }} min
+        <p v-if="recipe.fields.cookingTime" class="text-xs text-gray-500 mt-1">
+          Cook Time: {{ recipe.fields.cookingTime }}
         </p>
       </div>
 

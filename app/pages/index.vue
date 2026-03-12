@@ -23,12 +23,11 @@
               variant="outline"
               icon="i-lucide-chef-hat"
             >
-              Start Cooking
+              Browse Recipes
             </UButton>
           </div>
         </div>
-      </section>
-      <section>
+
         <UCard>
           <template #header>
             <div class="flex items-center gap-2">
@@ -39,7 +38,7 @@
 
           <p class="text-base leading-7 text-muted">
             AEDO'S KITCHEN is a recipe blog that provides an easy way to browse
-            recipes, view ingredients, and read cooking instructions.
+            recipes, view ingredients, and follow cooking instructions.
           </p>
         </UCard>
       </section>
@@ -47,8 +46,8 @@
       <section class="space-y-6">
         <div class="flex items-center justify-between">
           <div>
-            <h2 class="text-2xl font-semibold">Featured Recipes</h2>
-            <p class="text-muted">A few recipes you can start with</p>
+            <h2 class="text-2xl font-semibold">Latest Recipes</h2>
+            <p class="text-muted">Explore a few recipes from the collection</p>
           </div>
 
           <UButton to="/recipes" variant="ghost" icon="i-lucide-arrow-right">
@@ -56,7 +55,22 @@
           </UButton>
         </div>
 
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+        <div
+          v-if="previewRecipes.length"
+          class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          <RecipeCard
+            v-for="recipe in previewRecipes"
+            :key="recipe.sys.id"
+            :recipe="recipe"
+          />
+        </div>
+
+        <UCard v-else>
+          <p class="text-muted">
+            No recipes available yet. Add some in Contentful to see them here.
+          </p>
+        </UCard>
       </section>
 
       <section>
@@ -67,6 +81,7 @@
               Visit the recipes page to browse all available dishes and find
               your next meal idea.
             </p>
+
             <div class="flex justify-center">
               <UButton to="/recipes" size="lg" icon="i-lucide-utensils-crossed">
                 Go to Recipes
@@ -79,4 +94,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const { getRecipes } = useContentful();
+const recipes = await getRecipes();
+
+const previewRecipes = recipes.slice(0, 3);
+</script>
