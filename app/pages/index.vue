@@ -3,7 +3,11 @@
     <main class="container mx-auto px-4 py-10 space-y-16">
       <section class="grid gap-8 lg:grid-cols-2 items-center">
         <div class="space-y-6">
-          <UBadge color="primary" variant="soft" size="lg">
+          <UBadge
+            color="primary"
+            variant="soft"
+            size="lg"
+          >
             Welcome to AEDO'S KITCHEN
           </UBadge>
 
@@ -28,17 +32,41 @@
           </div>
         </div>
 
+        <UCard class="shadow-lg">
+          <template #header>
+            <div class="flex items-center gap-2">
+              <UIcon
+                name="i-lucide-utensils-crossed"
+                class="text-primary text-xl"
+              />
+              <span class="font-semibold">Cooking Made Simple</span>
+            </div>
+          </template>
+
+          <p class="text-muted">
+            This recipe blog lets you easily browse recipes, read cooking
+            instructions, and explore simple dishes you can make at home.
+          </p>
+        </UCard>
+      </section>
+
+      <section>
         <UCard>
           <template #header>
             <div class="flex items-center gap-2">
-              <UIcon name="i-lucide-info" class="text-primary" />
-              <h2 class="text-2xl font-semibold">About This Blog</h2>
+              <UIcon
+                name="i-lucide-info"
+                class="text-primary"
+              />
+              <h2 class="text-2xl font-semibold">
+                About This Blog
+              </h2>
             </div>
           </template>
 
           <p class="text-base leading-7 text-muted">
             AEDO'S KITCHEN is a recipe blog that provides an easy way to browse
-            recipes, view ingredients, and follow cooking instructions.
+            recipes, view ingredients, and follow cooking instructions
           </p>
         </UCard>
       </section>
@@ -46,11 +74,19 @@
       <section class="space-y-6">
         <div class="flex items-center justify-between">
           <div>
-            <h2 class="text-2xl font-semibold">Latest Recipes</h2>
-            <p class="text-muted">Explore a few recipes from the collection</p>
+            <h2 class="text-2xl font-semibold">
+              Latest Recipes
+            </h2>
+            <p class="text-muted">
+              Explore a few recipes from the collection
+            </p>
           </div>
 
-          <UButton to="/recipes" variant="ghost" icon="i-lucide-arrow-right">
+          <UButton
+            to="/recipes"
+            variant="ghost"
+            icon="i-lucide-arrow-right"
+          >
             View All
           </UButton>
         </div>
@@ -76,14 +112,21 @@
       <section>
         <UCard class="text-center">
           <div class="space-y-4 py-4">
-            <h2 class="text-2xl font-bold">Ready to explore more recipes?</h2>
+            <h2 class="text-2xl font-bold">
+              Ready to explore more recipes?
+            </h2>
+
             <p class="text-muted">
               Visit the recipes page to browse all available dishes and find
-              your next meal idea
+              your next meal idea.
             </p>
 
             <div class="flex justify-center">
-              <UButton to="/recipes" size="lg" icon="i-lucide-utensils-crossed">
+              <UButton
+                to="/recipes"
+                size="lg"
+                icon="i-lucide-utensils-crossed"
+              >
                 Go to Recipes
               </UButton>
             </div>
@@ -95,8 +138,7 @@
 </template>
 
 <script setup>
-const { getRecipes } = useContentful();
-const recipes = await getRecipes();
-
-const previewRecipes = recipes.slice(0, 3);
+const { getRecipes } = useContentful()
+const recipes = await getRecipes()
+const previewRecipes = recipes.slice(0, 3)
 </script>
